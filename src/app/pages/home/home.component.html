@@ -33,13 +33,17 @@
 
 <section class="courses">
     <h2>Ukończone kursy</h2>
-    <ul>
-        <li>Angular i Java Spring Od zera do Fullstack developera (Udemy)</li>
-        <li>Praktyczny kurs ASP.NET Core REST Web API (C#) (Udemy)</li>
-        <li>ASP.NET Core MVC - praktyczny kurs od podstaw (C# .NET 7) (Udemy)</li>
-        <li>Kompletny kurs C# dla developerów .NET (Udemy)</li>
-        <li>Microsoft Azure - praktyczny kurs dla developerów .NET (Udemy)</li>
-        <li>Kurs Tworzenia Stron WWW w HTML i CSS od Podstaw do Eksperta (Udemy)</li>
-        <li>CCNAv7: Enterprise Networking, Security, and Automation (WWSI)</li>
+    
+    <div *ngIf="isLoading">Ładowanie kursów...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+    
+    <ul *ngIf="!isLoading && !error && courses.length > 0">
+        <li *ngFor="let course of courses">
+            {{ course }}
+        </li>
     </ul>
-    <ul>
+    
+    <p *ngIf="!isLoading && !error && courses.length === 0">
+        Brak dostępnych kursów.
+    </p>
+</section>
