@@ -1,0 +1,22 @@
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-container h2 {
+  text-align: center;
+    color: #00b99a;
+  font-size: 2em;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
