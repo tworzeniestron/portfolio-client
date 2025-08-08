@@ -19,7 +19,7 @@
         <li>Znajomość frameworka <strong>Angular</strong></li>
         <li>Znajomość programowania w języku <strong>C#</strong></li>
         <li>Dobra znajomość <strong>HTML5</strong> i <strong>CSS3</strong></li>
-        <li>Podstawowa znajomość tworzenia aplikacji webowych w środowisku <strong>.NET/.NET Core</strong> / <strong>ASP.NET Core Web API</strong> / <strong>REST full API</strong></li>
+        <li>Znajomość tworzenia aplikacji webowych w środowisku <strong>.NET/.NET Core</strong> / <strong>ASP.NET Core Web API</strong> / <strong>REST full API</strong></li>
         <li>Umiejętność pracy w <strong>Microsoft Azure</strong></li>
         <li>Dobra znajomość baz danych <strong>SQL</strong></li>
         <li>Znajomość programowania w języku <strong>PHP</strong></li>
@@ -34,16 +34,7 @@
 <section class="courses">
     <h2>Ukończone kursy</h2>
     
-    <div *ngIf="isLoading">Ładowanie kursów...</div>
-    <div *ngIf="error" class="error">{{ error }}</div>
-    
-    <ul *ngIf="!isLoading && !error && courses.length > 0">
-        <li *ngFor="let course of courses">
-            {{ course }}
-        </li>
-    </ul>
-    
-    <p *ngIf="!isLoading && !error && courses.length === 0">
-        Brak dostępnych kursów.
-    </p>
+    <li *ngFor="let course of courses">  <!-- Iteracja po kursach -->
+        {{ course }}  <!-- Wyświetlenie kursu -->
+    </li>
 </section>

@@ -11,12 +11,11 @@ export interface CourseDto {
     providedIn: 'root'
 })
 export class CoursesService {
-    private apiUrl = '/api/courses';
+    private apiUrl = 'http://localhost:5051/api/courses';
 
     constructor(private http: HttpClient) { }
 
     getCourses(): Observable<string[]> {
-    console.log('Pobieranie z URL:', this.apiUrl);
     return this.http.get<CourseDto>(this.apiUrl).pipe(
         map(response => response.courses)
         );
