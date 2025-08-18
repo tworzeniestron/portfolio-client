@@ -11,7 +11,7 @@ export class ProjectsComponent {
     {
       title: 'Repozytorium na GitHubie',
       description: 'Repozytorium na GitHubie zawierające moje projekty i kod źródłowy.',
-      image: 'assets/img/logo.svg',
+      image: '/src/assets/img/logo.svg',
       githubUrl: 'https://github.com/tworzeniestron?tab=repositories'
     }
   ];

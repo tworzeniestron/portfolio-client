@@ -11,7 +11,7 @@ export interface CourseDto {
     providedIn: 'root'
 })
 export class CoursesService {
-    private apiUrl = 'http://localhost:5051/api/courses';
+    private apiUrl = 'https://portfolioapi-production-0bd2.up.railway.app/api/courses';
 
     constructor(private http: HttpClient) { }
 
