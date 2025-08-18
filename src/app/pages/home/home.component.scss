@@ -14,12 +14,18 @@ section {
     }
     a {
         font-size: 24px;
-        margin-left: -60px;
+        margin-left: -20px;
 
         &:hover {
             text-decoration: underline;
             font-style: italic;
         }
+    }
+}
+
+@media (max-width: 700px) {
+    section a {
+        margin-left: -60px;
     }
 }
 
