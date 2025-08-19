@@ -21,4 +21,16 @@ ul {
     justify-content: space-evenly;
     align-items: center;
     gap: 8px;
+    .fb-link {
+        color: #007bff;
+    }
+}
+
+
+.contact-links a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+        font-style: italic !important;
+    }
 }
