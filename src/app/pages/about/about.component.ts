@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
-import { slideInAnimation } from '../../../../route-animations';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
-  standalone: true,
-  imports: [],
-  animations: [slideInAnimation],
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
+  showScrollTop = false;
 
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.showScrollTop = window.pageYOffset > 500;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

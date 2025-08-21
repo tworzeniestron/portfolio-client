@@ -37,10 +37,11 @@
 
 #contact-section a:hover {
     padding: 5px;
-    color: rgb(170, 170, 170);
+    color: rgb(2, 45, 200);
     opacity: 1;
     border-radius: 2px;
     transition: all 0.5s;
+    font-style: italic;
 }
 #contact-section p {
     font-size: 1.4rem;
@@ -69,4 +70,19 @@
 
 #contact-section a:visited {
     color: rgb(115, 115, 115);
+}
+
+#contact-section span a {
+    color: rgb(2, 45, 200);
+    text-decoration: none;
+}
+
+#contact-section span a:hover {
+    padding: 5px;
+    color: rgb(2, 45, 200);
+    opacity: 1;
+    border-radius: 2px;
+    transition: all 0.5s;
+    font-style: italic;
+    text-decoration: underline;
 }

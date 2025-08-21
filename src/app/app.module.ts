@@ -10,26 +10,28 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
 import { CoursesService } from './services/courses.service';
 import { FooterComponent } from "./components/footer/footer.component";
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AboutComponent } from './pages/about/about.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectsComponent,
     ProjectCardComponent,
+    AboutComponent,
     NavbarComponent
   ],
   imports: [
     BrowserModule,
+    PrivacyComponent,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     FooterComponent,
     HomeComponent,
-    AboutComponent,
     ContactComponent
   ],
   providers: [CoursesService],

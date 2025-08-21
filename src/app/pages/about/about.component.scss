@@ -24,3 +24,26 @@
     margin-left: -10px;
 }
 }
+
+.scrollTopButton {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.scrollTopButton.visible {
+    opacity: 0.6;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.scrollTopButton.visible:hover {
+    opacity: 1;
+    cursor: pointer;
+    pointer-events: auto;
+}
+

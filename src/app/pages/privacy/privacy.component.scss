@@ -1,0 +1,50 @@
+html {
+    scroll-behavior: smooth;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body
+{
+    color: rgb(33, 3, 31);
+    font-size: 1.1rem;
+}
+
+section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+
+    p {
+        font-size: 1.2em;
+        line-height: 1.6;
+    }
+    a {
+        font-size: 24px;
+
+        &:hover {
+            text-decoration: underline;
+            font-style: italic;
+        }
+    }
+}
+
+.scrollTopButton {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    z-index: 1001;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.scrollTopButton.visible {
+    opacity: 0.6;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.scrollTopButton.visible:hover {
+    opacity: 1;
+    cursor: pointer;
+    pointer-events: auto;
+}
