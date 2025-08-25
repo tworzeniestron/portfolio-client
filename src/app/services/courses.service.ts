@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 export interface CourseDto {
     courses: string[];
@@ -19,5 +19,20 @@ export class CoursesService {
     return this.http.get<CourseDto>(this.apiUrl).pipe(
         map(response => response.courses)
         );
+    }
+}
+
+export class AuthService {
+
+    constructor(private http: HttpClient) { }
+
+    login(username: string, password: string): Observable<void> {
+        return this.http.post<{ token: string }>('/api/auth/login', { username, password })
+            .pipe(
+                tap(response => {
+                    localStorage.setItem('jwt_token', response.token);
+                }),
+                map(() => undefined)
+            );
     }
 }
