@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -11,11 +10,52 @@ import { Observable } from 'rxjs';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  containsMyProjects = false; // flaga zmiany tła
+  containsMyProjects = false;
+  showLoginForm = false;
+  username = '';
+  password = '';
+  @ViewChild('loginForm') loginFormRef!: ElementRef;
+
+  constructor(public authService: AuthService) {}
 
   ngAfterViewInit(): void {
-    const bodyText = document.body.innerText; // pobiera całą treść body
-    this.containsMyProjects = bodyText.includes('Moje projekty'); // sprawdza frazę
+    const bodyText = document.body.innerText;
+    this.containsMyProjects = bodyText.includes('Moje projekty');
+  }
+
+  openLogin() {
+    this.showLoginForm = true;
+  }
+
+  closeLogin() {
+    this.showLoginForm = false;
+  }
+
+  login() {
+    this.authService.login(this.username, this.password).subscribe({
+      next: () => {
+        this.showLoginForm = false;
+        this.username = '';
+        this.password = '';
+        alert('Zalogowano!');
+      },
+      error: () => alert('Błędny login lub hasło')
+    });
+  }
+
+  logout() {
+    this.authService.logout();
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    if (
+      this.showLoginForm &&
+      this.loginFormRef &&
+      !this.loginFormRef.nativeElement.contains(event.target)
+    ) {
+      this.closeLogin();
+    }
   }
 }
 
