@@ -14,6 +14,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { NavbarComponent, AuthInterceptor } from './components/navbar/navbar.component';
 import { AboutComponent } from './pages/about/about.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { PrivacyComponent } from './pages/privacy/privacy.component';
     FooterComponent,
     HomeComponent,
     ContactComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [
     CoursesService,

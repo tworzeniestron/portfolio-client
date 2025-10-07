@@ -1,14 +1,16 @@
 <section class="intro">
     <div>
-        <h1>Nazywam się Piotr Markiewicz 👋</h1>
+        <h1>Nazywam się Piotr Markiewicz <button (click)="toggle()">👇</button></h1>
     </div>
-    <div>
-        <p>Jestem <strong>Fullstack Developerem</strong> (<i>Angular + .NET</i>)</p>
-        <p>Projektuje również strony internetowe z wykorzystaniem <i>HTML, CSS</i> i <i>JavaScript</i>.</p>
-    </div>
+        <p
+        [@openClose]="isOpen ? 'open' : 'closed'" 
+        class="home-description"
+        >Jestem <strong>Fullstack Developerem</strong> (Angular + .NET)
+        <br>Projektuje również strony internetowe z wykorzystaniem <br> HTML, CSS i JavaScript.</p>
 </section>
 
-<section class="websites">
+<section class="websites"
+    [class.margin-open]="isOpen">
     <h2>Moje przykładowe strony</h2>
     <ul class="websites-list">
         <li><a href="https://alinowkadomeknamazurach.pl" target="_blank">alinowkadomeknamazurach.pl</a></li>

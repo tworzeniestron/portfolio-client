@@ -32,7 +32,27 @@ section {
     list-style-type: none;
 }
 
-.intro, .skills {
+.intro {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    button {
+        margin-left: 30px;
+        font-size: 0.7em;
+        cursor: pointer;
+    }
+}
+
+.home-description {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 1.2em;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.skills {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -46,6 +66,14 @@ section {
 li::before {
     content: "✨️";
     margin-right: 0;
+}
+.margin-open {
+    margin-top: 20px;
+    @media screen {
+        @media (max-width: 768px) {
+            margin-top: 360px;
+        }
+    }
 }
 .websites-list {
     font-size: 1.5em;
