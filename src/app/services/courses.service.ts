@@ -4,22 +4,24 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 export interface CourseDto {
-    courses: string[];
+    id: number;
+    title: string;
+    level: string;
 }
 
 @Injectable({
     providedIn: 'root'
 })
 export class CoursesService {
-    private apiUrl = 'https://portfolioapi-production-0bd2.up.railway.app/api/courses';
+    private apiUrl = 'https://portfolioapi-freeprod.up.railway.app/api/courses';
 
     constructor(private http: HttpClient) { }
 
     getCourses(): Observable<string[]> {
-    return this.http.get<CourseDto>(this.apiUrl).pipe(
-        map(response => response.courses)
-        );
-    }
+    return this.http.get<CourseDto[]>(this.apiUrl).pipe(
+        map(response => response.map(course => course.title))
+    );
+}
 }
 
 export class AuthService {

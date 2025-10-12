@@ -39,10 +39,18 @@
 
 <section class="courses">
     <h2>Ukończone kursy</h2>
-    
-    <li class="course" *ngFor="let course of courses">
+    <ul>
+        <li>"Angular i Java Spring Od zera do Fullstack developera (Udemy)"</li>
+        <li>"Praktyczny kurs ASP.NET Core REST Web API (C#) (Udemy)"</li>
+        <li>"ASP.NET Core MVC - praktyczny kurs od podstaw (C# .NET 7) (Udemy)"</li>
+        <li>"Kompletny kurs C# dla developerów .NET (Udemy)"</li>
+        <li>"Microsoft Azure - praktyczny kurs dla developerów .NET (Udemy)"</li>
+        <li>"Kurs Tworzenia Stron WWW w HTML i CSS od Podstaw do Eksperta (Udemy)"</li>
+        <li>"CCNAv7: Enterprise Networking, Security, and Automation  (WWSI)"</li>
+    </ul>
+    <!-- <li class="course" *ngFor="let course of courses">
         {{ course }}
-    </li>
+    </li> -->
 </section>
 
 <a class="scrollTopButton" [class.visible]="showScrollTop" (click)="scrollToTop()">
